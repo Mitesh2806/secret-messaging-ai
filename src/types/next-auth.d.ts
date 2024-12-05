@@ -6,7 +6,7 @@ declare module 'next-auth' {
         isVerified?: boolean;
         username?: string;
         isAcceptingMessage?: boolean;
-        role: 'admin' | 'supervisor' | 'user';
+        
     }
     interface Session{
         user:{
@@ -14,7 +14,7 @@ declare module 'next-auth' {
         isVerified?: boolean;
         isAcceptingMessage?: boolean;
         username?: string;
-        role: 'admin' | 'supervisor' | 'user';
+       
         }& DefaultSession["user"];
         
     
@@ -25,6 +25,6 @@ declare module 'next-auth/jwt' {
         _id?: string;
         isVerified?: boolean;
         isAcceptingMessage?: boolean;
-        role: 'admin' | 'supervisor' | 'user';
+       
     }
 }

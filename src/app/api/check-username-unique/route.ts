@@ -12,13 +12,15 @@ export async function GET(request: Request) {
         const {searchParams} = new URL(request.url);
         const queryParam = {
             username:searchParams.get("username")
+            
         }
         const result= UsernameQuerySchema.safeParse(queryParam)
         if(!result.success){
             const usernameErrors = result.error.format().username?._errors||[];
             return Response.json({success:false,errors:usernameErrors},{status:400})
         }
-
+        console.log("Request URL:", request.url);
+        console.log("Query Params:", queryParam);
         const {username} = result.data;
         const existingVerifiedUser = await UserModel.findOne({username, isVerified:true})
         if(existingVerifiedUser){
