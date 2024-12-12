@@ -3,9 +3,14 @@ import mongoose, { Schema, Document } from 'mongoose';
 export interface Message extends Document {
     content: string;
     createdAt: Date;
+    title: string;
 }
 
 const MessageSchema : Schema<Message>= new Schema({
+    title:{
+        type:String,
+        required:true
+    },
     content:{
         type:String,
         required:true

@@ -26,7 +26,7 @@
              return Response.json({success:false, message:"Failed to update user status to accept message"},{status:500});
          }
          }catch (error) {
-           Response.json({success:false},{status:500})
+          return  Response.json({success:false},{status:500})
        }
         
  };
@@ -53,7 +53,7 @@
              return Response.json({success:false, message:"Failed to update user status to accept message"},{status:500});
          }
          }catch (error) {
-           Response.json({success:false},{status:500})
+          return  Response.json({success:false},{status:500})
        }
         
  };

@@ -29,6 +29,7 @@ function UserDashboard() {
 
   const handleDeleteMessage = (messageId: string) => {
     setMessages(messages.filter((message) => message._id !== messageId));
+    
   };
 
   const { data: session } = useSession();

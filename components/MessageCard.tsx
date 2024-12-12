@@ -31,14 +31,17 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
         toast({
             title: response.data.message,
         });
-        onMessageDelete(message._id as string);
+        if (response.data.success) {
+            onMessageDelete(message._id as string);
+          }
     };
 
     return (
         <div className="">
             <Card>
-                <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
+                <CardHeader className=" flex flex-row  justify-between">
+                    
+                    <CardTitle>{message.title}</CardTitle>
                     <AlertDialog>
                         <AlertDialogTrigger asChild>
                             <Button variant="destructive">X</Button>
@@ -59,10 +62,10 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProps) => {
                             </AlertDialogFooter>
                         </AlertDialogContent>
                     </AlertDialog>
-                    <CardDescription>Card Description</CardDescription>
+                    
                 </CardHeader>
                 <CardContent>
-                    <p>Card Content</p>
+                    <p>{message.content}</p>
                 </CardContent>
             </Card>
         </div>

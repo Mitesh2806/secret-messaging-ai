@@ -16,7 +16,7 @@ const Navbar = () => {
         <a className=' text-xl font-bold mb-4 md:mb-0'href='#'>Feedback</a>
         {
             session ? (
-                <span className='mr-4'>
+                <span className='mx-4'>
                     Welcome, {user.username || user.email}
                     <Button className='w-full md:w-auto' onClick={() => signOut()}>Logout</Button>
                 </span>
